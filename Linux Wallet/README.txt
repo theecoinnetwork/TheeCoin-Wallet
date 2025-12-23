@@ -6,5 +6,5 @@ Instructions:
 Some versions of linux may require you to follow these instructions instead:
 1. Open the terminal or terminal emulator
 2. Navigate to where you extracted the contents of the TheeCoin_Linux.tar.gz file
-3. Once you are within the TheeCoin folder, run bash run.sh in the terminal window
+3. Once you are within the TheeCoin folder, simply run bash run.sh or node run.js
 4. TheeCoin Wallet should then run successfully
