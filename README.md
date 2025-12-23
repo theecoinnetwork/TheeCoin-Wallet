@@ -176,6 +176,8 @@ TheeCoin Wallet implements **military-grade security** that protects against bot
 
 </div>
 
+<p align="center">
+  
 ### 🎯 Security Highlights
 
 **🔐 256-bit Entropy** Maximum key strength
@@ -185,6 +187,8 @@ TheeCoin Wallet implements **military-grade security** that protects against bot
 **🔒 Triple Layer Protection** Impenetrable security
 
 ---
+
+</div>
 
 ## ⛏️ Mining & Rewards
 
