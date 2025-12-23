@@ -350,7 +350,7 @@ TheeCoin Wallet includes **revolutionary business features** designed for real-w
 
 **RAM:** 2GB minimum, 4GB recommended
 
-**Storage:** 500MB free space
+**Storage:** 40MB free space
 
 **Internet:** Broadband connection required
 
