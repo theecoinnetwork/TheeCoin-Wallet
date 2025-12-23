@@ -226,6 +226,8 @@ Lock your TheeCoin and earn attractive rewards. The longer you stake, the higher
 
 ---
 
+<div align="center">
+
 ## 🛒 Business Solutions
 
 ### 💼 Everything You Need to Accept TheeCoin
@@ -261,6 +263,10 @@ TheeCoin Wallet includes **revolutionary business features** designed for real-w
 5. Start accepting payments!
 
 ---
+
+</div>
+
+<div align="center">
 
 ## 📥 Download
 
@@ -401,10 +407,11 @@ TheeCoin Wallet includes built-in **encrypted chat**:
 | 💎 **Supply** | 100M fixed base | 21M but unlimited divisibility |
 | 📱 **User Experience** | Intuitive, advanced features | Complex for average users |
 
-### 🎯 26 Compelling Reasons to Choose TheeCoin
+</div>
 
-<details>
-<summary><b>Click to expand full list</b></summary>
+<div align="center">
+
+### 🎯 26 Compelling Reasons to Choose TheeCoin
 
 1. ✅ **Quantum-Proof Security** - Protected against future quantum attacks
 2. ✅ **Instant Transactions** - Zero confirmation time, immediate finality
@@ -433,7 +440,9 @@ TheeCoin Wallet includes built-in **encrypted chat**:
 25. ✅ **No Identity Verification** - Create wallets instantly, no KYC
 26. ✅ **Fixed 100M Base Supply** - Guaranteed scarcity
 
-</details>
+</div>
+
+<div align="center">
 
 ---
 
@@ -467,6 +476,10 @@ Official Price Increases
  Collectible Value Rises
 ```
 
+</div>
+
+<div align="center">
+
 #### 💡 Economic Principles
 
 - **📉 Mining Rate Reduction** - Decreasing supply increases scarcity
@@ -480,6 +493,10 @@ Official Price Increases
 > This is NOT investment advice or a promise of profit. TheeCoin is a limited-edition digital collectible with a system-defined price mechanism. All price movement is driven solely by user actions and network participation, similar to rare art, trading cards, or luxury goods.
 
 ---
+
+</div>
+
+<div align="center">
 
 ## 🏦 Special Network Wallets
 
@@ -495,6 +512,10 @@ TheeCoin's ecosystem includes several purpose-specific wallets:
 | 🎯 **Rewards Wallet** | Incentives | Distributes node operator and participant rewards |
 
 ---
+
+</div>
+
+<div align="center">
 
 ## ⚖️ Legal & Compliance
 
@@ -552,61 +573,9 @@ TheeCoin does **NOT** operate as:
 
 ---
 
-## 🤝 Contributing
+</div>
 
-We welcome contributions from the community! Here's how you can help:
-
-### 🐛 Report Bugs
-
-Found a bug? Please open an issue with:
-- Clear description of the problem
-- Steps to reproduce
-- Expected vs actual behavior
-- Screenshots if applicable
-- Your system information
-
-### 💡 Suggest Features
-
-Have an idea? We'd love to hear it! Open an issue with:
-- Detailed feature description
-- Use cases and benefits
-- Potential implementation approach
-
-### 🔧 Submit Pull Requests
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### 📚 Improve Documentation
-
-Help us make our documentation better:
-- Fix typos or unclear explanations
-- Add examples and tutorials
-- Translate to other languages
-- Create video guides
-
----
-
-## 💬 Support
-
-### 🆘 Getting Help
-
-Need assistance? Here are your options:
-
-- **📧 Email Support:** [Visit TheeCoin.com](https://theecoin.com)
-- **💬 Community Chat:** Use the built-in wallet chat
-- **📖 Documentation:** [TheeCoin Documentation](https://theecoin.com)
-- **🐛 Issue Tracker:** [GitHub Issues](https://github.com/theecoinnetwork/TheeCoin-Wallet/issues)
-
-### 📖 Additional Resources
-
-- **🌐 Official Website:** [theecoin.com](https://theecoin.com)
-- **💼 Business Solutions:** [Business Page](https://theecoin.com/business.html)
-- **🖥️ Node Software:** [TheeCoin Node Repository](https://github.com/theecoinnetwork/TheeCoin-Node)
-- **📜 Terms of Service:** [Terms](https://theecoin.com/terms.html)
+<div align="center">
 
 ### ❓ FAQ
 
@@ -642,6 +611,10 @@ No! TheeCoin has ZERO transaction fees. All transfers are completely free, forev
 
 ---
 
+<div>
+
+<div align="center">
+
 ## 📄 License
 
 TheeCoin Wallet is **open source** software. The project is autonomous and decentralized.
@@ -654,6 +627,10 @@ TheeCoin Wallet is **open source** software. The project is autonomous and decen
 - **Community Driven** - Built by users, for users
 
 ---
+
+</div>
+
+<div align="center">
 
 ## 🌟 Join the Financial Revolution
 
@@ -674,6 +651,8 @@ TheeCoin represents the future of cryptocurrency—instant, private, quantum-res
 - 💰 **Staking rewards** - earn up to 100% annually
 
 ---
+
+</div>
 
 <div align="center">
 
