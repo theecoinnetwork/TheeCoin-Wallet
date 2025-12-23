@@ -30,6 +30,8 @@
 
 ---
 
+<div align="center">
+
 ## 📖 Table of Contents
 
 - [About TheeCoin Wallet](#-about-theecoin-wallet)
@@ -49,6 +51,8 @@
 - [License](#-license)
 
 ---
+
+<div align="center">
 
 ## 🌟 About TheeCoin Wallet
 
