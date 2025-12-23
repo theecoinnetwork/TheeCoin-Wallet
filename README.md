@@ -59,9 +59,7 @@ For **TheeCoin Node**, please visit: **[https://github.com/theecoinnetwork/TheeC
 [Legal & Compliance](#-legal--compliance)
 <br>
 
-<br>
 ---
-<br>
 
 <div align="center">
 
@@ -69,7 +67,6 @@ For **TheeCoin Node**, please visit: **[https://github.com/theecoinnetwork/TheeC
 
 TheeCoin Wallet is the official client for **TheeCoin**, a revolutionary cryptocurrency designed to solve every major problem plaguing Bitcoin, other cryptocurrencies, and traditional fiat currencies. With a fixed base supply of only **100 million coins**, TheeCoin represents the latest evolution in cryptocurrency technology.
 
-<br>
 
 ### 🎯 Core Principles
 
