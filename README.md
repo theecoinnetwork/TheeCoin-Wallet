@@ -232,10 +232,14 @@ Automatic Distribution (86,400 seconds)
 #### 🎁 Mining Allocation
 
 **Total Mining Pool:** 50 million TheeCoin (50% of total supply)
+
 **Starting Rate:** 1 TheeCoin per 24-hour session
+
 **Rate Adjustment:** Decreases with each coin mined network-wide
-**Hardware Required:** None works on any device
-**Energy Cost:** Negligible environmentally sustainable
+
+**Hardware Required:** None - works on any device
+
+**Energy Cost:** Negligible - environmentally sustainable
 
 ---
 
@@ -256,12 +260,17 @@ Lock your TheeCoin and earn attractive rewards. The longer you stake, the higher
 
 ### ✨ Staking Benefits
 
-**⚡ Instant Rewards** Automatic distribution when period ends
-**🔒 Secure Locking** Coins safely locked in the network
-**🔓 Early Unlock** Change stake or unlock anytime (still get partial rewards)
-**🛡️ Network Support** Help secure the ecosystem
-**📈 Deflationary Pressure** Staked coins reduce circulating supply
-**🎯 Scheduled Emissions** Predictable returns, no market volatility
+**⚡ Instant Rewards** - Automatic distribution when period ends
+
+**🔒 Secure Locking** - Coins safely locked in the network
+
+**🔓 Early Unlock** - Change stake or unlock anytime (still get partial rewards)
+
+**🛡️ Network Support** - Help secure the ecosystem
+
+**📈 Deflationary Pressure** - Staked coins reduce circulating supply
+
+**🎯 Scheduled Emissions** - Predictable returns, no market volatility
 
 ---
 
@@ -286,12 +295,19 @@ TheeCoin Wallet includes **revolutionary business features** designed for real-w
 
 #### 💡 Business Advantages
 
-**Zero Transaction Fees** Keep 100% of payments
-**Instant Settlement** No waiting for confirmations
-**No Chargebacks** Irreversible transactions protect merchants
-**Global Customer Base** Accept payments from anywhere
-**Privacy Protected** No sensitive customer data to manage
-**Easy Integration** Simple copy-paste implementation
+**Zero Transaction Fees** - Keep 100% of payments
+
+**Instant Settlement** - No waiting for confirmations
+
+**No Chargebacks** - Irreversible transactions protect merchants
+
+**Global Customer Base** - Accept payments from anywhere
+
+**Privacy Protected** - No sensitive customer data to manage
+
+**Easy Integration** - Simple copy-paste implementation
+
+---
 
 #### 🚀 Getting Started
 
@@ -327,8 +343,11 @@ TheeCoin Wallet includes **revolutionary business features** designed for real-w
 ### ✅ System Requirements
 
 **Operating System:** Windows 10+, macOS 10.13+, Linux (Ubuntu 18.04+)
+
 **RAM:** 2GB minimum, 4GB recommended
+
 **Storage:** 500MB free space
+
 **Internet:** Broadband connection required
 
 ---
@@ -368,30 +387,48 @@ Wallet Ready!
 #### 3️⃣ Start Using TheeCoin
 
 **💰 Receive:** Share your wallet address or QR code
+
 **💸 Send:** Enter recipient address and amount
+
 **⛏️ Mine:** Start a 24-hour mining session
+
 **💎 Stake:** Lock coins for rewards
+
 **🛒 Shop:** Browse the marketplace
+
+---
 
 ### 🔐 Security Best Practices
 
-1. **✅ Backup Your Recovery Phrase**
-   Write down all 24 words in order
-   Store in a secure, offline location
-   Never share with anyone
-   Consider multiple secure backup copies
+#### 1. ✅ Backup Your Recovery Phrase
 
-2. **🔒 Secure Your Device**
-   Use strong device passwords
-   Enable device encryption
-   Keep software updated
-   Use antivirus protection
+Write down all 24 words in order
 
-3. **🛡️ Protect Your Privacy**
-   Don't share wallet addresses publicly
-   Use different addresses for different purposes
-   Be cautious with chat features
-   Verify recipient addresses before sending
+Store in a secure, offline location
+
+Never share with anyone
+
+Consider multiple secure backup copies
+
+#### 2. 🔒 Secure Your Device
+
+Use strong device passwords
+
+Enable device encryption
+
+Keep software updated
+
+Use antivirus protection
+
+#### 3. 🛡️ Protect Your Privacy
+
+Don't share wallet addresses publicly
+
+Use different addresses for different purposes
+
+Be cautious with chat features
+
+Verify recipient addresses before sending
 
 ---
 
@@ -415,21 +452,31 @@ Wallet Ready!
 
 ### 🔑 Private Information Management
 
-**🔐 View Private Keys** Access when needed (securely encrypted)
-**📝 Recovery Phrases** Backup and verification tools
-**📤 Wallet Export** Transfer to other devices
-**🔒 Encryption Options** Additional security layers
-**💾 Backup Tools** Multiple backup formats
+**🔐 View Private Keys** - Access when needed (securely encrypted)
+
+**📝 Recovery Phrases** - Backup and verification tools
+
+**📤 Wallet Export** - Transfer to other devices
+
+**🔒 Encryption Options** - Additional security layers
+
+**💾 Backup Tools** - Multiple backup formats
+
+---
 
 ### 💬 Secure Communication
 
 TheeCoin Wallet includes built-in **encrypted chat**:
 
-**🔒 End-to-End Encryption** Your messages are private
-**🚫 No Message Storage** Nothing saved on servers
-**👥 Peer-to-Peer** Direct communication
-**🌐 Global Reach** Chat with users worldwide
-**⚡ Instant Delivery** Real-time messaging
+**🔒 End-to-End Encryption** - Your messages are private
+
+**🚫 No Message Storage** - Nothing saved on servers
+
+**👥 Peer-to-Peer** - Direct communication
+
+**🌐 Global Reach** - Chat with users worldwide
+
+**⚡ Instant Delivery** - Real-time messaging
 
 ---
 
@@ -496,15 +543,23 @@ Official Price Increases
 
 #### 💡 Economic Principles
 
-**📉 Mining Rate Reduction** Decreasing supply increases scarcity
-**🔥 Deflationary Mechanism** Built-in scarcity mechanics
-**💎 Network Value Growth** Follows Metcalfe's Law
-**⚖️ Supply-Demand Economics** Natural upward pressure
-**🏦 Institutional Adoption** Superior tech attracts capital
-**🌍 Global Network Effects** Utility value increases exponentially
+**📉 Mining Rate Reduction** - Decreasing supply increases scarcity
 
-**⚠️ Important Disclaimer:**
-This is NOT investment advice or a promise of profit. TheeCoin is a limited-edition digital collectible with a system-defined price mechanism. All price movement is driven solely by user actions and network participation, similar to rare art, trading cards, or luxury goods.
+**🔥 Deflationary Mechanism** - Built-in scarcity mechanics
+
+**💎 Network Value Growth** - Follows Metcalfe's Law
+
+**⚖️ Supply-Demand Economics** - Natural upward pressure
+
+**🏦 Institutional Adoption** - Superior tech attracts capital
+
+**🌍 Global Network Effects** - Utility value increases exponentially
+
+> **⚠️ Important Disclaimer:**
+> 
+> This is NOT investment advice or a promise of profit. TheeCoin is a limited-edition digital collectible with a system-defined price mechanism.
+> 
+> All price movement is driven solely by user actions and network participation, similar to rare art, trading cards, or luxury goods.
 
 ---
 
@@ -563,19 +618,32 @@ Not an investment contract or security
 TheeCoin does **NOT** operate as:
 
 ❌ Broker-dealers
+
 ❌ Money transmitters
+
 ❌ Remittance services
+
 ❌ Payment processors
+
 ❌ Custodial wallet providers
+
 ❌ Exchanges or trading platforms
+
 ❌ Securities or investment contracts
+
+---
 
 ### 📋 User Responsibilities
 
-**💼 Tax Obligations** Users responsible for their own jurisdiction
-**🔐 Key Management** Users control their own private keys
-**⚖️ Legal Compliance** Users responsible for local law compliance
-**📊 Record Keeping** Users manage their own transaction records
+**💼 Tax Obligations** - Users responsible for their own jurisdiction
+
+**🔐 Key Management** - Users control their own private keys
+
+**⚖️ Legal Compliance** - Users responsible for local law compliance
+
+**📊 Record Keeping** - Users manage their own transaction records
+
+---
 
 ### ⚠️ Important Legal Disclaimer
 
