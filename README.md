@@ -352,7 +352,7 @@ TheeCoin Wallet includes **revolutionary business features** designed for real-w
 
 **Storage:** 40MB free space
 
-**Internet:** Broadband connection required
+**Internet:** Internet connection required
 
 ---
 
