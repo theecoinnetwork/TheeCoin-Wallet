@@ -16,11 +16,11 @@
 
 ---
 
-> **⚠️ IMPORTANT NOTE**
-> 
-> This repository is exclusively for **TheeCoin Wallet**. 
-> 
-> For **TheeCoin Node**, please visit: **[https://github.com/theecoinnetwork/TheeCoin-Node](https://github.com/theecoinnetwork/TheeCoin-Node)**
+**⚠️ IMPORTANT NOTE**
+
+This repository is exclusively for **TheeCoin Wallet**. 
+
+For **TheeCoin Node**, please visit: **[https://github.com/theecoinnetwork/TheeCoin-Node](https://github.com/theecoinnetwork/TheeCoin-Node)**
 
 ---
 
@@ -473,8 +473,8 @@ Official Price Increases
 **🏦 Institutional Adoption** Superior tech attracts capital
 **🌍 Global Network Effects** Utility value increases exponentially
 
-> **⚠️ Important Disclaimer:**
-> This is NOT investment advice or a promise of profit. TheeCoin is a limited-edition digital collectible with a system-defined price mechanism. All price movement is driven solely by user actions and network participation, similar to rare art, trading cards, or luxury goods.
+**⚠️ Important Disclaimer:**
+This is NOT investment advice or a promise of profit. TheeCoin is a limited-edition digital collectible with a system-defined price mechanism. All price movement is driven solely by user actions and network participation, similar to rare art, trading cards, or luxury goods.
 
 ---
 
@@ -549,11 +549,11 @@ TheeCoin does **NOT** operate as:
 
 ### ⚠️ Important Legal Disclaimer
 
-> **LEGAL DISCLAIMER – MUST READ BEFORE USING**
+**LEGAL DISCLAIMER – MUST READ BEFORE USING**
 >
-> TheeCoin is an **experimental decentralized digital collectible token** on the TheeCoin Network blockchain. TheeCoin is **NOT** legal tender, **NOT** money, **NOT** a currency, and carries **NO guaranteed or intrinsic value**.
+TheeCoin is an **experimental decentralized digital collectible token** on the TheeCoin Network blockchain. TheeCoin is **NOT** legal tender, **NOT** money, **NOT** a currency, and carries **NO guaranteed or intrinsic value**.
 >
-> No profits, returns, appreciation, or outcomes are promised or guaranteed at any time. Users are responsible for their own compliance with applicable laws. Use of the system constitutes acceptance of these terms. This is not financial, legal, or tax advice.
+No profits, returns, appreciation, or outcomes are promised or guaranteed at any time. Users are responsible for their own compliance with applicable laws. Use of the system constitutes acceptance of these terms. This is not financial, legal, or tax advice.
 
 ---
 
