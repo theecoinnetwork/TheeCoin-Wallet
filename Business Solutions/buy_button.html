@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheeCoin Buy Button</title>
+    <!-- Native PHP Email System - No external dependencies -->
+    <style>
+        /* Buy Button Styles */
+        .theecoin-buy-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .theecoin-buy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .theecoin-buy-button:active {
+            transform: translateY(0);
+        }
+
+        .theecoin-buy-button img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Modal Styles */
+        .theecoin-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .theecoin-modal-content {
+            background-color: #ffffff;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .theecoin-modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 16px 16px 0 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .theecoin-modal-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .theecoin-close {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 5px;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theecoin-close:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .theecoin-modal-body {
+            padding: 30px;
+        }
+
+        .theecoin-form-group {
+            margin-bottom: 20px;
+        }
+
+        .theecoin-form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .theecoin-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .theecoin-form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .theecoin-form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .theecoin-amount-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .theecoin-amount-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .theecoin-amount-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .theecoin-qr-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .theecoin-qr-code {
+            margin: 20px 0;
+        }
+
+        .theecoin-qr-code img {
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .theecoin-wallet-address {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theecoin-address-text {
+            flex: 1;
+            font-family: monospace;
+            font-size: 14px;
+            word-break: break-all;
+            color: #333;
+        }
+
+        .theecoin-copy-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            white-space: nowrap;
+            transition: background-color 0.3s ease;
+        }
+
+        .theecoin-copy-btn:hover {
+            background: #5a6fd8;
+        }
+
+        .theecoin-copy-btn:active {
+            background: #4c63d2;
+        }
+
+        .theecoin-instructions {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #2c5530;
+            line-height: 1.5;
+        }
+
+        .theecoin-submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .theecoin-submit-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .theecoin-modal-content {
+                margin: 10px;
+                width: calc(100% - 20px);
+                max-height: calc(100vh - 20px);
+            }
+
+            .theecoin-modal-body {
+                padding: 20px;
+            }
+
+            .theecoin-form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .theecoin-form-row .theecoin-form-group {
+                margin-bottom: 15px;
+            }
+
+            .theecoin-address-text {
+                font-size: 12px;
+            }
+
+            .theecoin-amount-value {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .theecoin-modal-header h2 {
+                font-size: 1.2em;
+            }
+
+            .theecoin-modal-header {
+                padding: 15px;
+            }
+
+            .theecoin-modal-body {
+                padding: 15px;
+            }
+        }
+
+        /* Toast notification */
+        .theecoin-toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            z-index: 10001;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+
+        .theecoin-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<script>
+/* ============================================
+ * CONFIGURATION SECTION - CUSTOMIZE HERE
+ * ============================================ */
+
+// Button Configuration
+const BUTTON_CONFIG = {
+    // Button text (set to empty string "" to hide text)
+    buttonText: "Buy with TheeCoin",
+    
+    // Button image URL (set to empty string "" to not use image)
+    buttonImageUrl: "",
+    
+    // Button size - can be "small", "medium", "large", or custom CSS size like "200px"
+    buttonSize: "medium",
+    
+    // Custom button width and height (only used if buttonSize is not small/medium/large)
+    customWidth: "200px",
+    customHeight: "50px"
+};
+
+// Form Field Configuration - set to false to disable/hide fields
+const FORM_FIELDS = {
+    firstName: true,        // Show first name field
+    lastName: true,         // Show last name field
+    email: true,            // Show email field
+    phone: true,            // Show phone number field
+    address: true,          // Show address fields
+    city: true,             // Show city field
+    state: true,            // Show state/province field
+    zipCode: true,          // Show ZIP/postal code field
+    country: true           // Show country field
+};
+
+// Field Requirements Configuration - set to false to make fields optional (no asterisk)
+const FIELD_REQUIREMENTS = {
+    firstName: true,        // First name required (shows *)
+    lastName: true,         // Last name required (shows *)
+    email: true,            // Email required (shows *)
+    phone: false,           // Phone optional (no *)
+    address: false,         // Address optional (no *)
+    city: false,            // City optional (no *)
+    state: false,           // State optional (no *)
+    zipCode: false,         // ZIP code optional (no *)
+    country: false          // Country optional (no *)
+};
+
+// Payment Configuration
+const PAYMENT_CONFIG = {
+    // Your TheeCoin wallet address for receiving payments
+    walletAddress: "INSERT YOUR WALLET ADDRESS HERE",
+    
+    // Payment amount/price
+    amount: "$INSERT YOUR PRICE HERE",
+    
+    // Currency or description
+    currency: "USD"
+};
+
+// Modal Configuration
+const MODAL_CONFIG = {
+    // Modal title
+    title: "Complete Your Purchase",
+    
+    // Instructions text
+    instructions: "Send the exact amount to the TheeCoin address below to complete your purchase. Your order will be processed once payment is confirmed."
+};
+
+// Email Notification Configuration
+const EMAIL_CONFIG = {
+    // Enable email notifications (set to true to activate)
+    enabled: false,
+    
+    // SMTP Configuration (for reliable email delivery)
+    smtp: {
+        enabled: false,                     // Set to true to use SMTP instead of native mail()
+        host: "smtp.gmail.com",            // SMTP server (Gmail: smtp.gmail.com, Outlook: smtp-mail.outlook.com)
+        port: 587,                         // SMTP port (Gmail: 587, Outlook: 587)
+        tls: true,                         // Use TLS encryption
+        username: "your-email@gmail.com",  // Your email address
+        password: "your-app-password",     // Your email password or app password
+        from_email: "your-email@gmail.com", // From email address
+        from_name: "Your Business Name"    // From name
+    },
+    
+    // Seller notification settings
+    sellerEmail: {
+        enabled: false,                          // Send email to seller when customer places order
+        toEmail: "seller@example.com",          // Your email address to receive notifications
+        subject: "New TheeCoin Purchase Order",  // Email subject line
+        template: "{{message}}"                 // Email template (use {{variable}} for placeholders)
+    },
+    
+    // Customer notification settings  
+    customerEmail: {
+        enabled: false,                          // Send confirmation email to customer
+        fromName: "Your Business Name",          // Your business name (appears in "From" field)
+        subject: "Your TheeCoin Purchase Confirmation",  // Email subject line for customer
+        template: "{{message}}"                 // Email template (use {{variable}} for placeholders)
+    }
+};
+
+/* ============================================
+ * END OF CONFIGURATION SECTION
+ * ============================================ */
+
+/* ============================================
+ * EMAIL SETUP INSTRUCTIONS
+ * ============================================
+ * 
+ * To enable email notifications:
+ * 
+ * 1. BASIC SETUP (Uses server's mail() function):
+ *    - Set EMAIL_CONFIG.enabled = true
+ *    - Configure sellerEmail and customerEmail settings
+ *    - Leave smtp.enabled = false
+ * 
+ * 2. SMTP SETUP (More reliable, recommended for production):
+ *    - Set EMAIL_CONFIG.enabled = true
+ *    - Set smtp.enabled = true
+ *    - Configure your email provider settings:
+ *      
+ *      GMAIL:
+ *      - host: "smtp.gmail.com"
+ *      - port: 587
+ *      - tls: true
+ *      - username: "your-email@gmail.com"
+ *      - password: "your-app-password" (generate at https://myaccount.google.com/apppasswords)
+ *      
+ *      OUTLOOK/HOTMAIL:
+ *      - host: "smtp-mail.outlook.com"
+ *      - port: 587
+ *      - tls: true
+ *      - username: "your-email@outlook.com"
+ *      - password: "your-password"
+ *      
+ *      OTHER PROVIDERS:
+ *      - Check your email provider's SMTP settings
+ * 
+ * 3. TEMPLATE VARIABLES:
+ *    Available variables for email templates:
+ *    - {{customer_name}} - Customer's name
+ *    - {{customer_email}} - Customer's email
+ *    - {{customer_phone}} - Customer's phone
+ *    - {{customer_address}} - Customer's address
+ *    - {{order_amount}} - Order amount
+ *    - {{payment_address}} - TheeCoin payment address
+ *    - {{order_date}} - Order date/time
+ *    - {{from_name}} - Your business name
+ *    - {{message}} - Full formatted message
+ * 
+ * 4. EXAMPLE CONFIGURATION:
+ * EMAIL_CONFIG = {
+ *     enabled: true,
+ *     smtp: {
+ *         enabled: true,
+ *         host: "smtp.gmail.com",
+ *         port: 587,
+ *         tls: true,
+ *         username: "orders@mybusiness.com",
+ *         password: "your-app-password",
+ *         from_email: "orders@mybusiness.com",
+ *         from_name: "My Business Store"
+ *     },
+ *     sellerEmail: {
+ *         enabled: true,
+ *         toEmail: "admin@mybusiness.com",
+ *         subject: "New TheeCoin Order"
+ *     },
+ *     customerEmail: {
+ *         enabled: true,
+ *         fromName: "My Business Store",
+ *         subject: "Order Confirmation"
+ *     }
+ * };
+ * 
+ * ============================================ */
+
+// Apply button size styling
+function applyButtonSizing() {
+    const button = document.querySelector('.theecoin-buy-button');
+    if (!button) return;
+    
+    switch (BUTTON_CONFIG.buttonSize) {
+        case 'small':
+            button.style.padding = '8px 16px';
+            button.style.fontSize = '14px';
+            break;
+        case 'medium':
+            button.style.padding = '12px 24px';
+            button.style.fontSize = '16px';
+            break;
+        case 'large':
+            button.style.padding = '16px 32px';
+            button.style.fontSize = '18px';
+            break;
+        default:
+            button.style.width = BUTTON_CONFIG.customWidth;
+            button.style.height = BUTTON_CONFIG.customHeight;
+            button.style.fontSize = '16px';
+            button.style.padding = '0';
+            button.style.display = 'flex';
+            button.style.alignItems = 'center';
+            button.style.justifyContent = 'center';
+    }
+}
+
+// Generate QR code URL
+function generateQRCode(address) {
+    const qrData = encodeURIComponent(address);
+    return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrData}&bgcolor=ffffff&color=000000&margin=10`;
+}
+
+// Copy to clipboard function
+function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+            showToast('Address copied to clipboard!');
+        }).catch(() => {
+            fallbackCopy(text);
+        });
+    } else {
+        fallbackCopy(text);
+    }
+}
+
+// Fallback copy method for older browsers
+function fallbackCopy(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showToast('Address copied to clipboard!');
+    } catch (err) {
+        showToast('Failed to copy address');
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+// Show toast notification
+function showToast(message) {
+    // Remove existing toast
+    const existingToast = document.querySelector('.theecoin-toast');
+    if (existingToast) {
+        existingToast.remove();
+    }
+    
+    const toast = document.createElement('div');
+    toast.className = 'theecoin-toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    
+    // Show toast
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 100);
+    
+    // Hide toast after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+            if (toast.parentNode) {
+                toast.parentNode.removeChild(toast);
+            }
+        }, 300);
+    }, 3000);
+}
+
+// Validate form
+function validateForm() {
+    const form = document.getElementById('theecoin-payment-form');
+    const inputs = form.querySelectorAll('input[required]');
+    let isValid = true;
+    
+    inputs.forEach(input => {
+        if (!input.value.trim()) {
+            input.style.borderColor = '#ff4757';
+            isValid = false;
+        } else {
+            input.style.borderColor = '#e1e5e9';
+        }
+    });
+    
+    // Email validation - only validate if field has a value or is required
+    const emailInput = form.querySelector('input[type="email"]');
+    if (emailInput && emailInput.value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value)) {
+            emailInput.style.borderColor = '#ff4757';
+            isValid = false;
+        } else {
+            emailInput.style.borderColor = '#e1e5e9';
+        }
+    } else if (emailInput && !emailInput.value && emailInput.hasAttribute('required')) {
+        // Email is required but empty
+        emailInput.style.borderColor = '#ff4757';
+        isValid = false;
+    }
+    
+    return isValid;
+}
+
+// Send email using PHP emailer
+async function sendEmail(emailType, customerData) {
+    if (!EMAIL_CONFIG.enabled) {
+        return { success: true, message: 'Email notifications disabled' };
+    }
+    
+    try {
+        const formData = new FormData();
+        formData.append('action', 'send_email');
+        formData.append('email_type', emailType);
+        formData.append('email_config', JSON.stringify(EMAIL_CONFIG));
+        formData.append('email_data', JSON.stringify({
+            ...customerData,
+            order_amount: PAYMENT_CONFIG.amount,
+            payment_address: PAYMENT_CONFIG.walletAddress,
+            order_date: new Date().toISOString()
+        }));
+        
+        const response = await fetch('emailer.php', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const result = await response.json();
+        return result;
+        
+    } catch (error) {
+        console.error('Email sending error:', error);
+        return { success: false, message: 'Email sending failed: ' + error.message };
+    }
+}
+
+// Send email to seller
+async function sendSellerNotification(formData) {
+    return await sendEmail('seller', formData);
+}
+
+// Send confirmation email to customer
+async function sendCustomerConfirmation(formData) {
+    return await sendEmail('customer', formData);
+}
+
+// Handle form submission
+async function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    if (!validateForm()) {
+        showToast('Please fill in all required fields correctly');
+        return;
+    }
+    
+    // Collect form data
+    const form = document.getElementById('theecoin-payment-form');
+    const formData = new FormData(form);
+    const customerData = Object.fromEntries(formData.entries());
+    
+    // Show processing message
+    showToast('Processing your order...');
+    
+    // Send email notifications if enabled
+    if (EMAIL_CONFIG.enabled) {
+        try {
+            // Send emails in parallel
+            const [sellerResult, customerResult] = await Promise.allSettled([
+                sendSellerNotification(customerData),
+                sendCustomerConfirmation(customerData)
+            ]);
+            
+            // Check results and show appropriate messages
+            let emailMessages = [];
+            
+            if (sellerResult.status === 'fulfilled' && sellerResult.value.success) {
+                emailMessages.push('Seller notified');
+            }
+            
+            if (customerResult.status === 'fulfilled' && customerResult.value.success) {
+                emailMessages.push('Confirmation email sent');
+            }
+            
+            if (emailMessages.length > 0) {
+                showToast(`Order submitted! ${emailMessages.join(', ')}.`);
+            } else {
+                showToast('Order submitted! (Email notifications may have failed)');
+            }
+            
+        } catch (error) {
+            console.error('Email sending error:', error);
+            showToast('Order submitted! (Email notifications failed)');
+        }
+    } else {
+        showToast('Thank you! Please send the payment to complete your order.');
+    }
+}
+
+// Build the modal HTML
+function buildModal() {
+    let formHTML = '';
+    
+    // Name fields (side by side)
+    if (FORM_FIELDS.firstName || FORM_FIELDS.lastName) {
+        formHTML += '<div class="theecoin-form-row">';
+        
+        if (FORM_FIELDS.firstName) {
+            const isRequired = FIELD_REQUIREMENTS.firstName;
+            const asterisk = isRequired ? ' *' : '';
+            const requiredAttr = isRequired ? 'required' : '';
+            formHTML += `
+                <div class="theecoin-form-group">
+                    <label for="firstName">First Name${asterisk}</label>
+                    <input type="text" id="firstName" name="firstName" ${requiredAttr}>
+                </div>
+            `;
+        }
+        
+        if (FORM_FIELDS.lastName) {
+            const isRequired = FIELD_REQUIREMENTS.lastName;
+            const asterisk = isRequired ? ' *' : '';
+            const requiredAttr = isRequired ? 'required' : '';
+            formHTML += `
+                <div class="theecoin-form-group">
+                    <label for="lastName">Last Name${asterisk}</label>
+                    <input type="text" id="lastName" name="lastName" ${requiredAttr}>
+                </div>
+            `;
+        }
+        
+        formHTML += '</div>';
+    }
+    
+    // Email field
+    if (FORM_FIELDS.email) {
+        const isRequired = FIELD_REQUIREMENTS.email;
+        const asterisk = isRequired ? ' *' : '';
+        const requiredAttr = isRequired ? 'required' : '';
+        formHTML += `
+            <div class="theecoin-form-group">
+                <label for="email">Email Address${asterisk}</label>
+                <input type="email" id="email" name="email" ${requiredAttr}>
+            </div>
+        `;
+    }
+    
+    // Phone field
+    if (FORM_FIELDS.phone) {
+        const isRequired = FIELD_REQUIREMENTS.phone;
+        const asterisk = isRequired ? ' *' : '';
+        const requiredAttr = isRequired ? 'required' : '';
+        formHTML += `
+            <div class="theecoin-form-group">
+                <label for="phone">Phone Number${asterisk}</label>
+                <input type="tel" id="phone" name="phone" ${requiredAttr}>
+            </div>
+        `;
+    }
+    
+    // Address fields
+    if (FORM_FIELDS.address) {
+        const isRequired = FIELD_REQUIREMENTS.address;
+        const asterisk = isRequired ? ' *' : '';
+        const requiredAttr = isRequired ? 'required' : '';
+        formHTML += `
+            <div class="theecoin-form-group">
+                <label for="address">Street Address${asterisk}</label>
+                <input type="text" id="address" name="address" ${requiredAttr}>
+            </div>
+        `;
+    }
+    
+    // City, State, ZIP (side by side on desktop)
+    if (FORM_FIELDS.city || FORM_FIELDS.state || FORM_FIELDS.zipCode) {
+        formHTML += '<div class="theecoin-form-row">';
+        
+        if (FORM_FIELDS.city) {
+            const isRequired = FIELD_REQUIREMENTS.city;
+            const asterisk = isRequired ? ' *' : '';
+            const requiredAttr = isRequired ? 'required' : '';
+            formHTML += `
+                <div class="theecoin-form-group">
+                    <label for="city">City${asterisk}</label>
+                    <input type="text" id="city" name="city" ${requiredAttr}>
+                </div>
+            `;
+        }
+        
+        if (FORM_FIELDS.state) {
+            const isRequired = FIELD_REQUIREMENTS.state;
+            const asterisk = isRequired ? ' *' : '';
+            const requiredAttr = isRequired ? 'required' : '';
+            formHTML += `
+                <div class="theecoin-form-group">
+                    <label for="state">State/Province${asterisk}</label>
+                    <input type="text" id="state" name="state" ${requiredAttr}>
+                </div>
+            `;
+        }
+        
+        if (FORM_FIELDS.zipCode) {
+            const isRequired = FIELD_REQUIREMENTS.zipCode;
+            const asterisk = isRequired ? ' *' : '';
+            const requiredAttr = isRequired ? 'required' : '';
+            formHTML += `
+                <div class="theecoin-form-group">
+                    <label for="zipCode">ZIP/Postal Code${asterisk}</label>
+                    <input type="text" id="zipCode" name="zipCode" ${requiredAttr}>
+                </div>
+            `;
+        }
+        
+        formHTML += '</div>';
+    }
+    
+    // Country field
+    if (FORM_FIELDS.country) {
+        const isRequired = FIELD_REQUIREMENTS.country;
+        const asterisk = isRequired ? ' *' : '';
+        const requiredAttr = isRequired ? 'required' : '';
+        formHTML += `
+            <div class="theecoin-form-group">
+                <label for="country">Country${asterisk}</label>
+                <input type="text" id="country" name="country" ${requiredAttr}>
+            </div>
+        `;
+    }
+    
+    const qrCodeUrl = generateQRCode(PAYMENT_CONFIG.walletAddress);
+    
+    return `
+        <div id="theecoin-modal" class="theecoin-modal">
+            <div class="theecoin-modal-content">
+                <div class="theecoin-modal-header">
+                    <h2>${MODAL_CONFIG.title}</h2>
+                    <button class="theecoin-close" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="theecoin-modal-body">
+                    <form id="theecoin-payment-form" onsubmit="handleFormSubmit(event)">
+                        ${formHTML}
+                        
+                        <div class="theecoin-amount-section">
+                            <div class="theecoin-amount-label">Total Amount</div>
+                            <div class="theecoin-amount-value">${PAYMENT_CONFIG.amount}</div>
+                        </div>
+                        
+                        <div class="theecoin-qr-section">
+                            <h3>Send Payment to TheeCoin Address</h3>
+                            <div class="theecoin-qr-code">
+                                <img src="${qrCodeUrl}" alt="TheeCoin Address QR Code" width="200" height="200">
+                            </div>
+                            
+                            <div class="theecoin-wallet-address">
+                                <div class="theecoin-address-text">${PAYMENT_CONFIG.walletAddress}</div>
+                                <button type="button" class="theecoin-copy-btn" onclick="copyToClipboard('${PAYMENT_CONFIG.walletAddress}')">Copy</button>
+                            </div>
+                            
+                            <div class="theecoin-instructions">
+                                ${MODAL_CONFIG.instructions}
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="theecoin-submit-btn">Complete Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Show modal
+function showModal() {
+    const modal = document.getElementById('theecoin-modal');
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    
+    // Close modal when clicking outside
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    };
+}
+
+// Close modal
+function closeModal() {
+    const modal = document.getElementById('theecoin-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Handle escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Initialize the buy button when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Create the modal HTML and add it to the page
+    document.body.insertAdjacentHTML('beforeend', buildModal());
+    
+    // Apply button sizing
+    applyButtonSizing();
+    
+    // Set up button content
+    const button = document.querySelector('.theecoin-buy-button');
+    if (button) {
+        if (BUTTON_CONFIG.buttonImageUrl) {
+            // Use image
+            button.innerHTML = `<img src="${BUTTON_CONFIG.buttonImageUrl}" alt="Buy Button">`;
+        } else if (BUTTON_CONFIG.buttonText) {
+            // Use text
+            button.textContent = BUTTON_CONFIG.buttonText;
+        }
+    }
+});
+</script>
+
+<!-- The Buy Button -->
+<button class="theecoin-buy-button" onclick="showModal()">
+    Buy with TheeCoin
+</button>
+
+</body>
+</html>
