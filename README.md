@@ -333,16 +333,17 @@ TheeCoin Wallet includes **revolutionary business features** designed for real-w
 
 | Platform | Download |
 |----------|----------|
-| 🪟 **Windows** | [Download for Windows](https://theecoin.com/download.html) |
-| 🍎 **macOS** | [Download for macOS](https://theecoin.com/download.html) |
-| 🐧 **Linux** | [Download for Linux](https://theecoin.com/download.html) |
+| 🪟 **Windows** | [Download for Windows](https://github.com/theecoinnetwork/TheeCoin-Wallet/tree/main/Windows%20Wallet) |
+| 🍎 **macOS** | [Download for macOS](https://github.com/theecoinnetwork/TheeCoin-Wallet/tree/main/MacOS%20Wallet) |
+| 🐧 **Linux** | [Download for Linux](https://github.com/theecoinnetwork/TheeCoin-Wallet/tree/main/Linux%20Wallet) |
+| 🐧 **Universal** | [Download for Linux](https://github.com/theecoinnetwork/TheeCoin-Wallet/tree/main/Universal%20Codebase) |
 
 ### 📱 Mobile Platforms
 
 | Platform | Download |
 |----------|----------|
-| 🤖 **Android** | [Download for Android](https://theecoin.com/download.html) |
-| 🌐 **Web Wallet** | [Access Web Wallet](https://theecoin.com/download.html) |
+| 🤖 **Android** | [Download for Android](https://github.com/theecoinnetwork/TheeCoin-Wallet/tree/main/Termux%20(Android)%20Wallet) |
+| 🌐 **Web Wallet** | [No Download Required](https://theecoin-webwallet.onrender.com) |
 
 ### ✅ System Requirements
 
