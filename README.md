@@ -176,7 +176,7 @@ TheeCoin Wallet implements **military-grade security** that protects against bot
 
 </div>
 
-<p align="center">
+<div align="center">
   
 ### 🎯 Security Highlights
 
@@ -189,6 +189,8 @@ TheeCoin Wallet implements **military-grade security** that protects against bot
 ---
 
 </div>
+
+<div align="center">
 
 ## ⛏️ Mining & Rewards
 
