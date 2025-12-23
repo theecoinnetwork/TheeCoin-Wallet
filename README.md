@@ -59,7 +59,9 @@ For **TheeCoin Node**, please visit: **[https://github.com/theecoinnetwork/TheeC
 [Legal & Compliance](#-legal--compliance)
 <br>
 
+<br>
 ---
+<br>
 
 <div align="center">
 
