@@ -35,20 +35,29 @@
 ## 📖 Table of Contents
 
 [About TheeCoin Wallet](#-about-theecoin-wallet)
+<br>
 [Why Choose TheeCoin?](#-why-choose-theecoin)
+<br>
 [Key Features](#-key-features)
+<br>
 [Security Architecture](#-security-architecture)
+<br>
 [Mining & Rewards](#-mining--rewards)
+<br>
 [Staking System](#-staking-system)
+<br>
 [Business Solutions](#-business-solutions)
+<br>
 [Download](#-download)
+<br>
 [Getting Started](#-getting-started)
+<br>
 [Wallet Features](#-wallet-features)
+<br>
 [Advantages Over Other Cryptos](#-advantages-over-bitcoin--other-cryptos)
+<br>
 [Legal & Compliance](#-legal--compliance)
-[Contributing](#-contributing)
-[Support](#-support)
-[License](#-license)
+<br>
 
 ---
 
